@@ -1,0 +1,9 @@
+﻿<p>Mạng Neuron network nhận diện số viết tay sử dụng đầu vào 784 neuron (28*28) trong đó mỗi neuron đầu vào có giá trị từ [0;1]. 
+Đây là mạng fully connected với 200 neuron lớp ẩn, mỗi neuron lớp ẩn có 1 hệ số bias và đầu ra 10 neuron. 
+Như vậy ta có (784+1)*200 parameter từ input cho tới lớp ẩn và (200+1)*10 = 2010 parameter từ lớp ẩn cho tới đầu ra.
+Lớp ẩn sử dụng hàm chuyển Tanh và đầu ra sử dụng hàm Sogmod.</p>
+
+<p>Neuron network được học từ bộ dữ liệu MNIST với độ lỗi 3,74 %(nhận diện chính xác 9626/1000 test).</p>
+<p>Gới thiệu giao diện: Vẽ số và vùng có diện tích 280x280 pixels, sau đó chuyển sang ma trận
+28x28 cho input nuron network. Chuyển sang ma trận bằng cách gom nhóm 10x10 pixels, tính tổng sau đó chia cho 100, như vậy ta được giá trị trong khoảng [0;1]. 
+Giá trị 0 khi block 10x10 không có điểm đen nào, ngược lại 1 khi 10x10 toàn là điểm đen. </p>
