@@ -169,7 +169,7 @@ function imageDataToGrayscale(imgData) {
 }
 //function luu anh doi tuong
 function CutObj(i, j) {
-    if (i == 2 || j == 2 || i == c.height - 2 || j == c.width - 2) return;
+    if (i < 0 || j < 0 || i > c.height - 1 || j > c.width - 1) return;
     if (grayscaleImg[i][j] == 1) {
         arrObj[i][j - jCur + 10] = 1;
         grayscaleImg[i][j] = 0;

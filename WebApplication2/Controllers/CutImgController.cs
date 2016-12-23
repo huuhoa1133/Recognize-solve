@@ -76,7 +76,7 @@ namespace WebApplication2.Controllers
         public JsonResult GetResult(string expression)
         {
             TinhGTBT cal = new TinhGTBT();
-            double result = cal.Calculate(expression);
+            string result = cal.Calculate(expression);
             return Json(result);
         }
     }

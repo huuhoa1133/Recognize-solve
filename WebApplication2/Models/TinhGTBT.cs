@@ -88,8 +88,11 @@ namespace WebApplication2.Models
             return (c >= '0' && c <= '9') || (c == '.');
         }
 
-        public double Calculate(string exp)
+        public string Calculate(string exp)
         {
+            try
+            {
+                
             string bt = Convert(exp);
             Stack<double> stk = new Stack<double>();
             Console.WriteLine(bt);
@@ -148,7 +151,13 @@ namespace WebApplication2.Models
                 }
             }
 
-            return stk.Pop();
+            return stk.Pop().ToString();
+            }
+            catch (Exception)
+            {
+
+                return exp;
+            }
         }
     }
 
