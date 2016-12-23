@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "SUDOKU ONLINE";
+
+}
+
+
+<head>
+    <title>SUDOKU ONLINE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>SUDOKU ONLINE</h1>
+        </div>
+
+        <div class="row">
+            <div class=" col-md-6">
+                <div class="alert alert-success hidden" id="alert-win">
+                    <strong>Success!</strong> Indicates a successful or positive action.
+                </div>
+            </div>
+            <div class="col-md-6">
+                
+                <div class="btn-group" role="group" style="padding:30px;">
+
+                    <button type="button" class="btn btn-primary btn-lg " onclick="setlevel(10)">Dễ</button>
+                    <button type="button" class="btn btn-warning btn-lg "style="padding-left:30px;padding-right:30px;" onclick="setlevel(20)">Vừa</button>
+                    <button type="button" class="btn btn-danger btn-lg " onclick="setlevel(30)">Khó</button>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id='canvas1' width='541' height='541' style="border:2px solid;">Canvas is not supported by this browser.</canvas>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary btn-lg btn-block" id="btnReset" onclick="reset()">Reset Sudoku</button>
+                <button class="btn btn-primary btn-lg btn-block" id="btnSolve" onclick="solve()">Solve Sudoku</button>
+                <button class="btn btn-primary btn-lg btn-block" id="btnErase" onclick="earse()">Earse</button>
+                <button class="btn btn-primary btn-lg btn-block" id="btnRecognize" onclick="recognize()">Recognize</button>
+            </div>
+            <div class="col-md-4">
+                <canvas id="can" width="280" height="280" style="border:2px solid;"></canvas>
+            </div>
+        </div>
+
+    </div>
+   
+</body>
+<script src="~/Scripts/jDemoSudoku.js"></script>

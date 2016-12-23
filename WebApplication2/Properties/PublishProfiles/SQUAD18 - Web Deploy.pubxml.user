@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <CopyAllFilesToSingleFolderForPackageDependsOn>
+      CustomCollectFiles;
+      $(CopyAllFilesToSingleFolderForPackageDependsOn);
+    </CopyAllFilesToSingleFolderForPackageDependsOn>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb5itijz1J0q+5efhHWvOXwAAAAACAAAAAAAQZgAAAAEAACAAAADLyhy6g9p4BF2eBTr9L/Et+Y5FVuRij74rdrZ4Ex0qWAAAAAAOgAAAAAIAACAAAACS8b9DGS530Igpjc/2aAakEKwIRqmcfLuEADbpL5UEN4AAAABzHe6W5F2McQPHNcxU7zGnsoFnJtUeKnRimLgRvTFI1PIeZPy5JBIndb0JFGZKJ4sBKr/Gx4tLkfJ2HWjyJepG1TxqGOZq/RSUb88oO25JL3mslQZwghZTw/qOd52byU8ImMD8neA36Lff1O70nlXeNSrmcjI/mdAyGtRzI3TD2EAAAACI7WWck8iOW3zCkfRNYgO25/WiI5buUyFxlXLqCjYwbpr/tlTN5ZT3lA+XPoDLREzXQEDDjINiiTr9LwTMrV03</EncryptedPassword>
+  </PropertyGroup>
+  <Target Name="CustomCollectFiles">
+    <ItemGroup>
+      <_CustomFiles Include="bin\*.xml" />
+
+      <FilesForPackagingFromProject  Include="%(_CustomFiles.Identity)">
+        <DestinationRelativePath>bin\%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+  </Target>
+</Project>

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <title>SUDOKU ONLINE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<div class="container">
+    <div class="row">
+        <canvas id="canDraw" width="1000" height="280" style="border:2px solid;"></canvas>
+    </div>
+    <div class="row">
+        <button class="btn btn-success" onclick="cutImg()"> Cut </button>
+        <button class="btn btn-success" onclick="earse()"> Earse </button>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div style="float:left;font-size:80px;" id="nnOut"></div>
+        </div>
+        <div class="col-md-4">
+            <canvas id="canCut" width="280" height="280"></canvas>
+        </div>
+    </div>
+    
+</div>
+<script src="~/Scripts/CutImg.js"></script>
+
+
