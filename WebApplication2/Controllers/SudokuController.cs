@@ -13,7 +13,7 @@ namespace WebApplication2.Controllers
         public ActionResult Index()
         {
             //load data
-            string path = Server.MapPath("~/App_Data/RecogCharacterPlus.xml");
+            string path = Server.MapPath("~/App_Data/RecogCharacter.xml");
 
             LoadXMLModel load = new LoadXMLModel();
             //Backpropagation a = new Backpropagation(path);
